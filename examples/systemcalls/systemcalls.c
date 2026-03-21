@@ -16,6 +16,7 @@ bool do_system(const char *cmd)
  *   and return a boolean true if the system() call completed with success
  *   or false() if it returned a failure
 */
+<<<<<<< HEAD
     int k = system(cmd);
     bool retval;
     if(k == 0) {
@@ -25,6 +26,10 @@ bool do_system(const char *cmd)
     }
 
     return retval;
+=======
+
+    return true;
+>>>>>>> assignments-base/assignment3-part-1
 }
 
 /**
@@ -54,7 +59,11 @@ bool do_exec(int count, ...)
     command[count] = NULL;
     // this line is to avoid a compile warning before your implementation is complete
     // and may be removed
+<<<<<<< HEAD
     // command[count] = command[count];
+=======
+    command[count] = command[count];
+>>>>>>> assignments-base/assignment3-part-1
 
 /*
  * TODO:
@@ -65,6 +74,7 @@ bool do_exec(int count, ...)
  *   as second argument to the execv() command.
  *
 */
+<<<<<<< HEAD
     bool retval;
     fflush(stdout);
     int child_pid = fork();
@@ -93,6 +103,12 @@ bool do_exec(int count, ...)
     va_end(args);
 
     return retval;
+=======
+
+    va_end(args);
+
+    return true;
+>>>>>>> assignments-base/assignment3-part-1
 }
 
 /**
@@ -122,6 +138,7 @@ bool do_exec_redirect(const char *outputfile, int count, ...)
  *   redirect standard out to a file specified by outputfile.
  *   The rest of the behaviour is same as do_exec()
  *
+<<<<<<< HEAD
 */  
     openlog(NULL,0,LOG_USER);
     errno = 0;
@@ -163,4 +180,11 @@ bool do_exec_redirect(const char *outputfile, int count, ...)
     va_end(args);
 
     return retval;
+=======
+*/
+
+    va_end(args);
+
+    return true;
+>>>>>>> assignments-base/assignment3-part-1
 }
