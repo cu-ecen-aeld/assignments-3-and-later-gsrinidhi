@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 nargs=$#
 if [ ${nargs} -ne 2 ]
 then
