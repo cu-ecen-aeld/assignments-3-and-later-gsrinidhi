@@ -13,8 +13,11 @@ FINDER_APP_DIR=$(realpath $(dirname $0))
 ARCH=arm64
 CROSS_COMPILE=aarch64-none-linux-gnu-
 SYSROOT=$(${CROSS_COMPILE}gcc -print-sysroot)
+CURRDIR=$(pwd)
 
-source ../init_arm_toolchain.sh 
+source ${FINDER_APP_DIR}/../init_arm_toolchain.sh 
+
+echo "finder app direcotry is ${FINDER_APP_DIR} for output"
 
 if [ $# -lt 1 ]
 then
@@ -102,7 +105,7 @@ cd ${OUTDIR}/rootfs
 sudo mknod -m 666 dev/null c 1 3
 sudo mknod -m 666 dev/console c 5 1
 # TODO: Clean and build the writer utility
-cd /home/srinidhi/Documents/Coursera/Embedded_Linux_and_Buildroot/assignment-1-gsrinidhi/finder-app
+cd ${FINDER_APP_DIR}
 make clean
 make CROSS_COMPILE=aarch64-none-linux-gnu-gcc
 
