@@ -9,7 +9,7 @@ NUMFILES=10
 WRITESTR=AELD_IS_FUN
 WRITEDIR=/tmp/aeld-data
 CONFDIR=conf
-pwd=$(pwd)
+pwd=$(dirname $0)
 if [ ${pwd} = "/usr/bin" ]
 then
 	CONFDIR=/etc/finder-app/conf
