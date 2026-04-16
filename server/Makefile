@@ -4,9 +4,7 @@ CC = $(CROSS_COMPILE)
 
 all: aesdsocket
 
-aesdsocket: aesdsocket.o
-	${CC} aesdsocket.o -o aesdsocket
-aesdsocket.o: aesdsocket.c
-	${CC} -c aesdsocket.c
+aesdsocket: aesdsocket.c
+	${CC} -g aesdsocket.c -o aesdsocket
 clean:
 	rm -f aesdsocket.o aesdsocket

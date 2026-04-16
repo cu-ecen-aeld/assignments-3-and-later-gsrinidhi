@@ -171,6 +171,7 @@ int main(int argv, char *argc[]) {
             }
             if (rcv_char == '\n')
             {
+                buffer[i] = '\0'; // Null-terminate the buffer
                 printf("buffer: %s\n", buffer);
                 // syslog(LOG_INFO, "Received line: %s", buffer);
 
